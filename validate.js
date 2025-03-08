@@ -1,3 +1,27 @@
+// ADD REGULAR EXPRESSION FUNCTION TO VALIDATE NUMBER ONLY IN STRING ATTRIBUTE
+function isNumeric(value) {
+	/*
+		/^ : เริ่มต้นของ String
+		? คือ optional
+		/d คือ ตัวเลข
+		+ คือมี 1 หรือมากกว่านั้น
+		$/ คือจบ Sting
+		.test(value) เอา value ไปตรวจสอบกับ REGULAR EXPRESSION ว่าถูกไหม
+	*/
+
+    return /^\d+$/.test(value);
+}
+
+function checkSID() {
+	let sid = (document.getElementById("sid").value).trim();
+  
+	if (sid.length == 10 && isNumeric(sid)) {
+	  return true;
+	} else {
+	  return false;
+	}
+}
+
 function checkSID() {
   let sid = (document.getElementById("sid").value).trim();
   if (sid.length == 10) {
